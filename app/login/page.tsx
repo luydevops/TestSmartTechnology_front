@@ -53,7 +53,8 @@ export default function Page() {
                 sessionStorage.setItem("expires_at", (Date.now() + 30 * 60 * 1000).toString());
 
                 // Redirigir al usuario al dashboard
-                router.push("/dashboard/ver-usuarios");
+                // Forzar la actualización del ClientLayout
+                router.push("/dashboard/ver-usuarios?refresh=true");
             } else {
                 setLoginError("No se recibió un token de autenticación.");
             }
